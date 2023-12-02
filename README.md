@@ -3,7 +3,7 @@
 This work is about a parallel implementation of a neural network training using the MPI standard in Python, with the `mpi4py` library. The NN is developed using PyTorch.
 
 ## Basic explanation
-An NN model is created and replicated over all the processing cores. The dataset used for training the NN is splitted into a number of subsets matching the number of cores, also contemplating the case where the number of rows in the dataset is not a multiple of the number of cores. Each worker computes de loss function and the gradient, using the assigned subset. Then, the gradients computed at each worker are gathered in the root, and averaged. Then, the model parameters are updated using such averaged gradient. 
+A NN model is created for a regression problem using a toy dataset generated within the code using Sklearn. The model is replicated over all the processing cores. The dataset used for training the NN is splitted into a number of subsets matching the number of cores, also contemplating the case where the number of rows in the dataset is not a multiple of the number of cores. Each worker computes de loss function and the gradient, using the assigned subset. Then, the gradients computed at each worker are gathered in the root, and averaged. Then, the model parameters are updated using such averaged gradient. 
 
 
 ## Script "dataParallelTraining_NN_MPI.py":
